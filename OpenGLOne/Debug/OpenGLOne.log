@@ -1,2 +1,5 @@
-﻿  main.cpp
+﻿  Camera.cpp
+  main.cpp
+C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\main.cpp(86,15): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+  Generating Code...
   OpenGLOne.vcxproj -> C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\Debug\OpenGLOne.exe
