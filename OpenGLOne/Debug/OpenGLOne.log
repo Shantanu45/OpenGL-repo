@@ -1,2 +1,5 @@
-﻿  Texture.cpp
+﻿  main.cpp
+C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\main.cpp(100,15): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\main.cpp(121,47): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\main.cpp(121,22): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
   OpenGLOne.vcxproj -> C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\Debug\OpenGLOne.exe

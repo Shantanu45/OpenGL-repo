@@ -18,6 +18,7 @@
 #include "Shader.h"
 #include "Camera.h"
 #include "Texture.h"
+#include "Light.h"
 
 const float toRadians = 3.14159265f / 180.0f;
 
@@ -28,6 +29,8 @@ Camera camera;
 
 Texture brickTexture;
 Texture dirtTexture;
+
+Light mainLight;
 
 GLfloat deltaTime = 0.0f;
 GLfloat lastTime = 0.0f;
@@ -48,10 +51,11 @@ void CreateObjects()
 	};
 
 	GLfloat vertices[] = {
-		-1.0f, -1.0f, 0.0f, 0.0f, 0.0f,
-		0.0f, -1.0f, 1.0f,  0.5f, 0.0f,
-		1.0f, -1.0f, 0.0f,	1.0f, 0.0f,
-		0.0f, 1.0f, 0.0f,	0.5f, 1.0f
+		//	x      y      z			u	  v
+			-1.0f, -1.0f, 0.0f,		0.0f, 0.0f,
+			0.0f, -1.0f, 1.0f,		0.5f, 0.0f,
+			1.0f, -1.0f, 0.0f,		1.0f, 0.0f,
+			0.0f, 1.0f, 0.0f,		0.5f, 1.0f
 	};
 
 	Mesh* obj1 = new Mesh();
@@ -85,9 +89,9 @@ int main()
 	dirtTexture = Texture("Textures/dirt.png");
 	dirtTexture.LoadTexture();
 
+	mainLight = Light(1.0f, 1.0f, 1.0f, 0.5f);
 
-
-	GLuint uniformProjection = 0, uniformModel = 0, uniformView = 0;
+	GLuint uniformProjection = 0, uniformModel = 0, uniformView = 0, uniformAmbientIntensity = 0, uniformAmbientColour = 0;
 	glm::mat4 projection = glm::perspective(glm::radians(45.0f), (GLfloat)mainWindow.getBufferWidth() / mainWindow.getBufferHeight(), 0.1f, 100.0f);
 
 	// Loop until window closed
@@ -111,6 +115,10 @@ int main()
 		uniformModel = shaderList[0].GetModelLocation();
 		uniformProjection = shaderList[0].GetProjectionLocation();
 		uniformView = shaderList[0].GetViewLocation();
+		uniformAmbientColour = shaderList[0].GetAmbientColourLocation();
+		uniformAmbientIntensity = shaderList[0].GetAmbientIntensityLocation();
+
+		mainLight.UseLight(uniformAmbientIntensity, uniformAmbientColour);
 
 		glm::mat4 model(1.0f);
 
@@ -120,7 +128,6 @@ int main()
 		glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
 		glUniformMatrix4fv(uniformView, 1, GL_FALSE, glm::value_ptr(camera.calculateViewMatrix()));
 		brickTexture.UseTexture();
-
 		meshList[0]->RenderMesh();
 
 		model = glm::mat4(1.0f);
@@ -128,7 +135,6 @@ int main()
 		model = glm::scale(model, glm::vec3(0.4f, 0.4f, 1.0f));
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		dirtTexture.UseTexture();
-
 		meshList[1]->RenderMesh();
 
 		glUseProgram(0);
