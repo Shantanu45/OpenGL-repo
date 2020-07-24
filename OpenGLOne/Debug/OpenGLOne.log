@@ -1,9 +1,8 @@
-﻿  main.cpp
-  Mesh.cpp
-  Shader.cpp
-  Window.cpp
+﻿  Window.cpp
+  main.cpp
   Generating Code...
-C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\Window.cpp(64): warning C4715: 'Window::Initialise': not all control paths return a value
+C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\Window.cpp(80): warning C4715: 'Window::Initialise': not all control paths return a value
+  LINK : C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\Debug\OpenGLOne.exe not found or not built by the last incremental link; performing full link
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
 LINK : warning LNK4286: symbol '___glewBindBuffer' defined in 'glew32s.lib(glew.obj)' is imported by 'Mesh.obj'
