@@ -27,7 +27,6 @@ Camera camera;
 GLfloat deltaTime = 0.0f;
 GLfloat lastTime = 0.0f;
 
-
 // Vertex Shader
 static const char* vShader = "Shaders/shader.vert";
 
@@ -68,14 +67,13 @@ void CreateShaders()
 
 int main()
 {
-
 	mainWindow = Window(800, 600);
 	mainWindow.Initialise();
 
 	CreateObjects();
 	CreateShaders();
 
-	camera = Camera(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), -90.0f, 0.0f, 5.0f, 1.0f);
+	camera = Camera(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), -90.0f, 0.0f, 5.0f, 0.5f);
 
 	GLuint uniformProjection = 0, uniformModel = 0, uniformView = 0;
 	glm::mat4 projection = glm::perspective(glm::radians(45.0f), (GLfloat)mainWindow.getBufferWidth() / mainWindow.getBufferHeight(), 0.1f, 100.0f);
@@ -83,14 +81,15 @@ int main()
 	// Loop until window closed
 	while (!mainWindow.getShouldClose())
 	{
-		GLfloat now = glfwGetTime();
-		deltaTime = now - lastTime;
+		GLfloat now = glfwGetTime(); // SDL_GetPerformanceCounter();
+		deltaTime = now - lastTime; // (now - lastTime)*1000/SDL_GetPerformanceFrequency();
 		lastTime = now;
 
 		// Get + Handle User Input
 		glfwPollEvents();
 
-		camera.keyControl(mainWindow.getKeys(), deltaTime);
+		camera.keyControl(mainWindow.getsKeys(), deltaTime);
+		camera.mouseControl(mainWindow.getXChange(), mainWindow.getYChange());
 
 		// Clear the window
 		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
@@ -108,7 +107,6 @@ int main()
 		glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
 		glUniformMatrix4fv(uniformProjection, 1, GL_FALSE, glm::value_ptr(projection));
 		glUniformMatrix4fv(uniformView, 1, GL_FALSE, glm::value_ptr(camera.calculateViewMatrix()));
-
 		meshList[0]->RenderMesh();
 
 		model = glm::mat4(1.0f);

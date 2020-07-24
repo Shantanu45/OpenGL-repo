@@ -9,6 +9,9 @@ Window::Window()
 	{
 		keys[i] = 0;
 	}
+
+	xChange = 0.0f;
+	yChange = 0.0f;
 }
 
 Window::Window(GLint windowWidth, GLint windowHeight)
@@ -20,6 +23,9 @@ Window::Window(GLint windowWidth, GLint windowHeight)
 	{
 		keys[i] = 0;
 	}
+
+	xChange = 0.0f;
+	yChange = 0.0f;
 }
 
 int Window::Initialise()
@@ -55,12 +61,12 @@ int Window::Initialise()
 	// Set the current context
 	glfwMakeContextCurrent(mainWindow);
 
-	// Allow modern extension access
-	glewExperimental = GL_TRUE;
-
 	// Handle Key + Mouse Input
 	createCallbacks();
 	glfwSetInputMode(mainWindow, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+
+	// Allow modern extension access
+	glewExperimental = GL_TRUE;
 
 	GLenum error = glewInit();
 	if (error != GLEW_OK)
@@ -95,7 +101,7 @@ GLfloat Window::getXChange()
 GLfloat Window::getYChange()
 {
 	GLfloat theChange = yChange;
-	xChange = 0.0f;
+	yChange = 0.0f;
 	return theChange;
 }
 
@@ -113,12 +119,10 @@ void Window::handleKeys(GLFWwindow* window, int key, int code, int action, int m
 		if (action == GLFW_PRESS)
 		{
 			theWindow->keys[key] = true;
-			//std::cout << "Pressed:" << key << std::endl;
 		}
-		else if(action == GLFW_RELEASE)
+		else if (action == GLFW_RELEASE)
 		{
 			theWindow->keys[key] = false;
-			//std::cout << "released:" << key << std::endl;
 		}
 	}
 }
@@ -129,21 +133,17 @@ void Window::handleMouse(GLFWwindow* window, double xPos, double yPos)
 
 	if (theWindow->mouseFirstMoved)
 	{
-		theWindow->lastX = static_cast<float>(xPos);
-		theWindow->lastY = static_cast<float>(yPos);
+		theWindow->lastX = xPos;
+		theWindow->lastY = yPos;
 		theWindow->mouseFirstMoved = false;
 	}
 
-	theWindow->xChange = static_cast<float>(xPos - theWindow->lastX);
-	theWindow->yChange = static_cast<float>(theWindow->lastY - yPos);
+	theWindow->xChange = xPos - theWindow->lastX;
+	theWindow->yChange = theWindow->lastY - yPos;
 
-	theWindow->lastX = static_cast<float>(xPos);
-	theWindow->lastY = static_cast<float>(yPos);
-
-	std::cout << std::fixed;
-	std::cout << "x: " << std::setprecision(6) << theWindow->xChange << ", y: " << theWindow->yChange << std::endl;
+	theWindow->lastX = xPos;
+	theWindow->lastY = yPos;
 }
-
 
 Window::~Window()
 {

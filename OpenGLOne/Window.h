@@ -1,8 +1,6 @@
 #pragma once
 
 #include "stdio.h"
-#include <iostream>
-#include <iomanip> 
 
 #include <GL\glew.h>
 #include <GLFW\glfw3.h>
@@ -21,11 +19,7 @@ public:
 
 	bool getShouldClose() { return glfwWindowShouldClose(mainWindow); }
 
-	bool* getKeys()
-	{
-		return keys;
-	}
-
+	bool* getsKeys() { return keys; }
 	GLfloat getXChange();
 	GLfloat getYChange();
 
