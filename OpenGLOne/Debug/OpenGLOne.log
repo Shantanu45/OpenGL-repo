@@ -1,18 +1,13 @@
-﻿  Camera.cpp
-  Material.cpp
-  Shader.cpp
-  main.cpp
-C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\main.cpp(140,15): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\main.cpp(167,29): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
-C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\main.cpp(167,4): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
-C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\main.cpp(166,47): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
-C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\main.cpp(166,22): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
-  Generating Code...
+﻿  DirectionalLight.cpp
+C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\DirectionalLight.cpp(18,14): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\DirectionalLight.cpp(19,14): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\DirectionalLight.cpp(21,14): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\DirectionalLight.cpp(22,14): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
 LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
-LINK : warning LNK4286: symbol '___glewUniform1f' defined in 'glew32s.lib(glew.obj)' is imported by 'Light.obj'
+LINK : warning LNK4286: symbol '___glewUniform1f' defined in 'glew32s.lib(glew.obj)' is imported by 'DirectionalLight.obj'
 LINK : warning LNK4286: symbol '___glewUniform1f' defined in 'glew32s.lib(glew.obj)' is imported by 'Material.obj'
-LINK : warning LNK4286: symbol '___glewUniform3f' defined in 'glew32s.lib(glew.obj)' is imported by 'Light.obj'
+LINK : warning LNK4286: symbol '___glewUniform3f' defined in 'glew32s.lib(glew.obj)' is imported by 'DirectionalLight.obj'
 LINK : warning LNK4286: symbol '___glewBindBuffer' defined in 'glew32s.lib(glew.obj)' is imported by 'Mesh.obj'
 LINK : warning LNK4286: symbol '___glewBufferData' defined in 'glew32s.lib(glew.obj)' is imported by 'Mesh.obj'
 LINK : warning LNK4286: symbol '___glewDeleteBuffers' defined in 'glew32s.lib(glew.obj)' is imported by 'Mesh.obj'
