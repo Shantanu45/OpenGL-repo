@@ -1,5 +1,15 @@
-﻿  main.cpp
-C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\main.cpp(100,15): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
-C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\main.cpp(121,47): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
-C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\main.cpp(121,22): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+﻿  Light.cpp
+C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\Light.cpp(25,14): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\Light.cpp(26,14): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\Light.cpp(28,14): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\Light.cpp(29,14): warning C4244: 'argument': conversion from 'GLfloat' to 'GLint', possible loss of data
+  Mesh.cpp
+  Shader.cpp
+  main.cpp
+C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\main.cpp(132,15): warning C4244: 'initializing': conversion from 'double' to 'GLfloat', possible loss of data
+C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\main.cpp(156,29): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\main.cpp(156,4): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\main.cpp(155,47): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\OpenGLOne\main.cpp(155,22): warning C4244: 'argument': conversion from 'GLuint' to 'GLfloat', possible loss of data
+  Generating Code...
   OpenGLOne.vcxproj -> C:\Users\Shantanu\Documents\GitHub\OpenGL-repo\Debug\OpenGLOne.exe
